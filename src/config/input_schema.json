@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BasicTrafficGeneratorConfig",
+  "type": "object",
+  "properties": {
+    "urls_file": {
+      "type": "string",
+      "description": "Relative or absolute path to a text file containing target URLs."
+    },
+    "output_file": {
+      "type": "string",
+      "description": "Relative or absolute path to the JSON file where results will be written."
+    },
+    "sessions": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Number of sessions; each session iterates over the full URL list."
+    },
+    "max_interactions": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 10,
+      "description": "Maximum number of automated interactions performed per URL."
+    },
+    "concurrency": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 3,
+      "description": "Number of concurrent workers that process URLs."
+    },
+    "headless": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to run browsers in headless mode."
+    },
+    "delay_between_sessions": {
+      "type": "number",
+      "minimum": 0,
+      "default": 0,
+      "description": "Delay in seconds between processing URLs per worker."
+    }
+  },
+  "required": [
+    "urls_file",
+    "output_file",
+    "sessions",
+    "max_interactions",
+    "concurrency",
+    "headless",
+    "delay_between_sessions"
+  ],
+  "additionalProperties": false
+}
