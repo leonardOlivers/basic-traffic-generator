@@ -1,0 +1,2 @@
+playwright>=1.45.0
+jsonschema>=4.0.0
